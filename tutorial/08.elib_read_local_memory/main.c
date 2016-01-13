@@ -25,6 +25,7 @@ int main(int argc, char *argv[]) {
     }
   }
 
+  e_close(&dev);
   e_finalize();
   return 0;
 }

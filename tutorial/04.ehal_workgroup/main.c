@@ -13,6 +13,7 @@ int main(int argc, char *argv[]) {
   e_open(&dev, 0, 0, platform.rows, platform.cols);
   e_reset_group(&dev);
 
+  e_close(&dev);
   e_finalize();
   return 0;
 }

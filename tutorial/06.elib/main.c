@@ -15,6 +15,7 @@ int main(int argc, char *argv[]) {
 
   e_load_group((char*) "e-hello.srec", &dev, 0, 0, platform.rows, platform.cols, E_TRUE);
 
+  e_close(&dev);
   e_finalize();
   return 0;
 }
