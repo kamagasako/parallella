@@ -10,7 +10,7 @@ int main(int argc, char *argv[]) {
   e_get_platform_info(&platform);
   printf("hello, world with %dx%d eCore\n", platform.rows, platform.cols);
 
-  e_open(&dev, 0, 0, rows, cols);
+  e_open(&dev, 0, 0, platform.rows, platform.cols);
   e_reset_group(&dev);
 
   e_finalize();
