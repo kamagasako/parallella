@@ -2,6 +2,7 @@
 #include <unistd.h>
 #include "e-hal.h"
 #include "e-loader.h"
+#include "addr.h"
 
 int main(int argc, char *argv[]) {
   e_platform_t platform;
@@ -20,7 +21,7 @@ int main(int argc, char *argv[]) {
   int core_id;
   for (int i = 0; i < platform.rows; i++) {
     for (int j = 0; j < platform.cols; j++) {
-      e_read(&dev, i, j, 0x2000, &core_id, sizeof(int));
+      e_read(&dev, i, j, ADDR, &core_id, sizeof(int));
       printf("hello, world from eCore: 0x%03X (%d, %d)\n", core_id, i, j);
     }
   }
