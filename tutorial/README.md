@@ -13,7 +13,7 @@ run `./build.sh` then `./run.sh`
 
 ### 0x: Epiphany SDK
 #### Prerequirement
-Epiphany SDK (eSDK) is preinstalled in /opt/esdk dir.
+Epiphany SDK (eSDK) is preinstalled in /opt/adapteva/esdk dir.
 
 #### 01. Hello World
 simple program to print "hello, world" to console (STDOUT).
