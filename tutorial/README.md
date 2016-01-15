@@ -48,6 +48,7 @@ simple program to print "hello, world" to console (STDOUT).
 #### 07. Write to eCore Local Memory
 > Each mesh node has a local, aliased, range of local memory that is accessible by the mesh node itself starting at address 0x0. On 32KB chip models, it ends at address 0x00007FFF. 
 
+
 > Each core on the platform is referenced via a definition of a workgroup. Two global objects are available at each core’s space. One object, called e_group_config, contains the information about the chip type, the workgroup’s position and size, and the core’s position in the containing workgroup.
 
 * *new* addr.h: define eCore local memory address to share data with host
@@ -61,6 +62,21 @@ simple program to print "hello, world" to console (STDOUT).
 ### 1x: OpenMPI clustering
 #### Prerequirement
 OpenMPI is pre-installed in /opt/openmpi dir.
+
+#### 11. OpenMPI Compiling and Running
+simple "hello, world" programm, compiling with OpenMPI compiler *mprcc* and running with *mpirun* program
+
+* build.sh: use mpicc to compile
+* run.sh: use mpirun to execute 2 copies (processes) of program
+
+#### 12. OpenMPI Initialize and Finalize
+
+* main.c: initialize and finalize program with MPI functions
+
+#### 13. OpenMPI Functions
+
+* main.c: get process rank (id) and processor name to print
+
 
 ### 2x: Epiphany SDK + OpenMPI
 
