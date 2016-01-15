@@ -76,7 +76,9 @@ OpenMPI is pre-installed in /opt/openmpi dir.
 simple "hello, world" programm, compiling with OpenMPI compiler *mprcc* and running with *mpirun* program
 
 * build.sh: use mpicc to compile
-* run.sh: use mpirun to execute 2 copies (processes) of program
+* run.sh: use mpirun to execute 2 copies (processes) of program in local machine
+
+if you have more nodes, set more values to *-np* option e.g. `-np 4` with 2 Parallella boards (4 CPU)
 
 #### 12. OpenMPI Initialize and Finalize
 
@@ -92,3 +94,21 @@ simple "hello, world" programm, compiling with OpenMPI compiler *mprcc* and runn
 
 #### Prerequirement
 - slurm-llnn: see <http://cb1300sf.info/archives/1036>
+
+#### 21. Template
+A Parallella board has one Epiphany and two CPU core. Calling reset/finalize Epiphany from any processes would causes the system crash. To prevent it, you need to call those functions only once. Here, I used blocking functions; MPI_Send/Recv.
+
+* initialize: primary process (rank:0) calles reset and notify sencondary (rank:1, blocked) to starts.
+* finialize: secondary process notifys computing completed to primary (blocked), then finalizes.
+
+* main.c: use blocking functions to prevent system crash
+
+#### 22. Workgroup
+
+
+#### 23. Load
+
+
+#### 24. Slurm Workload Manager
+
+run `./build.sh` then `sbatch ./run.sh`, not './run.sh'
