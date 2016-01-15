@@ -5,6 +5,7 @@ run `./build.sh` then `./run.sh`
 
 ## references
 * Epiphany SDK Reference <http://adapteva.com/docs/epiphany_sdk_ref.pdf>
+* OpenMPI v1.8 documentation <http://www.open-mpi.org/doc/v1.8/>
 
 ## content
 * 0x: Epihany SDK
@@ -48,6 +49,7 @@ simple program to print "hello, world" to console (STDOUT).
 #### 07. Write to eCore Local Memory
 > Each mesh node has a local, aliased, range of local memory that is accessible by the mesh node itself starting at address 0x0. On 32KB chip models, it ends at address 0x00007FFF. 
 
+ 
 
 > Each core on the platform is referenced via a definition of a workgroup. Two global objects are available at each core’s space. One object, called e_group_config, contains the information about the chip type, the workgroup’s position and size, and the core’s position in the containing workgroup.
 
@@ -59,9 +61,16 @@ simple program to print "hello, world" to console (STDOUT).
 * main.c: sleep to wait eCore computing, and read core_id from each eCore local memory and print it
 * build.sh: update gcc option (C99 for loop initial declaration)
 
-### 1x: OpenMPI clustering
+### 1x: OpenMPI Clustering
 #### Prerequirement
 OpenMPI is pre-installed in /opt/openmpi dir.
+
+#### Setting up Clustering
+- connect nodes to GbE hub
+- create ssh key pairs (public key and private key)
+- copy pubkeys to each node
+- add pubkeys to ~/.ssh/authorized_keys
+- check to login each other without password/passphrase
 
 #### 11. OpenMPI Compiling and Running
 simple "hello, world" programm, compiling with OpenMPI compiler *mprcc* and running with *mpirun* program
@@ -76,6 +85,7 @@ simple "hello, world" programm, compiling with OpenMPI compiler *mprcc* and runn
 #### 13. OpenMPI Functions
 
 * main.c: get process rank (id) and processor name to print
+
 
 
 ### 2x: Epiphany SDK + OpenMPI
