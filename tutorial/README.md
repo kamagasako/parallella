@@ -17,7 +17,7 @@ run `./build.sh` then `./run.sh`
 Epiphany SDK (eSDK) is preinstalled in /opt/adapteva/esdk dir.
 
 #### 01. Hello World
-simple program to print "hello, world" to console (STDOUT).
+simple program to print "hello, world" to console (stdout).
 
 #### 02. eHAL (Epiphany Hardware Abstraction Layer)
 > The Epiphany Hardware Abstraction Layer (eHAL) library provides functionality for communicating with the Epiphany chip when the application runs on a host. The host can be a PC or an embedded processor. The communication is performed using memory writes to and reads from shared buffers that the applications on both sides should define.
