@@ -59,10 +59,10 @@ eCoreで実行するプログラムを実装します。まずは何もしない
 
 #### 0.7 eCoreローカルメモリへの書き出し
 > Each mesh node has a local, aliased, range of local memory that is accessible by the mesh node itself starting at address 0x0. On 32KB chip models, it ends at address 0x00007FFF. 
-<div />
-> Each core on the platform is referenced via a definition of a workgroup. Two global objects are available at each core’s space. One object, called e_group_config, contains the information about the chip type, the workgroup’s position and size, and the core’s position in the containing workgroup.
 
 取得したeCore IDをホスト側から参照できるようにするため、eCoreのローカルメモリに書き込みます。ローカルメモリは0x40からのBank0, 0x2000からのBank1, 0x4000からのBank2, 0x6000からのBank3があります (どう使い分けるのかについてはリファレンスマニュアルに多少記述があります)。
+
+> Each core on the platform is referenced via a definition of a workgroup. Two global objects are available at each core’s space. One object, called e_group_config, contains the information about the chip type, the workgroup’s position and size, and the core’s position in the containing workgroup.
 
 なお、突然`e_group_config`という変数が登場しましたが、これはeLibで定義されるグローバル変数です。このプログラムを実行しているeCoreが所属するワークグループの情報を参照できます。もう一つ、`e_emem_config`というグローバル変数もあります。
 

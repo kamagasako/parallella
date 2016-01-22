@@ -48,7 +48,9 @@ simple program to print "hello, world" to console (stdout).
 
 #### 07. Write to eCore Local Memory
 > Each mesh node has a local, aliased, range of local memory that is accessible by the mesh node itself starting at address 0x0. On 32KB chip models, it ends at address 0x00007FFF. 
-<div />
+
+&nbsp;
+
 > Each core on the platform is referenced via a definition of a workgroup. Two global objects are available at each core’s space. One object, called e_group_config, contains the information about the chip type, the workgroup’s position and size, and the core’s position in the containing workgroup.
 
 * *new* addr.h: define eCore local memory address to share data with host
@@ -98,7 +100,9 @@ A Parallella board has one Epiphany and two CPU core. Calling reset/finalize Epi
 
 * initialize: primary process (rank:0) calles reset and notify sencondary (rank:1, blocked) to starts.
 * finialize: secondary process notifys computing completed to primary (blocked), then finalizes.
-<div />
+
+&nbsp;
+
 * main.c: use blocking functions to prevent system crash
 
 #### 22. Workgroup
